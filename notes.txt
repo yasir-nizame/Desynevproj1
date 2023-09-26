@@ -1,0 +1,19 @@
+.h-100 => used to keep height equal for all cards
+g-4 (gutter)=> used to insert a 4px gap between cards
+map() objects p nh lgtaaaaaaaaa
+
+const seeMoreButton = document.getElementById('see-more-button');
+let currentPage = 1; // Track the current page of cards
+const cardsPerPage = 9; // Number of cards to load per page
+
+seeMoreButton.addEventListener('click', () => {
+  currentPage++; // Increment the current page
+  for (let i = 0; i < cardsPerPage; i++) {
+    fetchAndGenerateCards(currentPage * cardsPerPage + i); // Fetch and generate more cards
+  }
+});
+
+// Initial load
+for (let i = 1; i <= cardsPerPage; i++) {
+  fetchAndGenerateCards(i);
+}
